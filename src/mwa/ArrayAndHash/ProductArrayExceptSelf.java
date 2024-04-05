@@ -1,4 +1,4 @@
-package mwa;
+package mwa.ArrayAndHash;
 
 public class ProductArrayExceptSelf {
 
