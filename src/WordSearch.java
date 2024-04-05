@@ -30,6 +30,7 @@ public class WordSearch {
 
         //checkRight
         if(currPos[1]+1<board[currPos[0]].length){
+
             if(!excludedPositions.contains(new int[]{currPos[0], currPos[1]+1})){
                 availablePos.add(new int[]{currPos[0], currPos[1]+1});
             }
