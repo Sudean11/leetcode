@@ -8,12 +8,13 @@ public class Palindrome {
         System.out.println(isPalindrome);
     }
     public boolean isPalindrome(int x) {
-        String valueToString = x+"";
-        StringBuilder newString = new StringBuilder(valueToString).reverse();
-        if(newString.equals(valueToString)){
-            return true;
+        int originalValue = x;
+        int reversedValue = 0;
+        while(originalValue > 0){
+            reversedValue = reversedValue * 10 + (originalValue % 10);
+            originalValue  = originalValue/10;
         }
-        return false;
+        return x == reversedValue;
     }
     public static void main(String[] args) {
         new Palindrome();
