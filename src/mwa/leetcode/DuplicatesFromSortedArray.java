@@ -18,15 +18,16 @@ public class DuplicatesFromSortedArray {
             if(currentVal == nums[currentIndex]){
                 currentIndex++;
             }else{
-                System.out.println(currentIndex);
-                System.out.println(Arrays.stream(nums).boxed().collect(Collectors.toList()));
+                System.out.println("here"+currentIndex+"  "+index);
                 nums[index] = nums[currentIndex];
+                currentVal = nums[index];
                 index++;
+                currentIndex++;
             }
         }
-        System.out.println(nums);
+        System.out.println(Arrays.stream(nums).boxed().collect(Collectors.toList()));
 
-        return 1;
+        return index;
     }
 
     public static void main(String[] args) {
