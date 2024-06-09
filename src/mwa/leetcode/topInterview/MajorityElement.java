@@ -22,6 +22,6 @@ public class MajorityElement {
         return number;
     }
     public static void main(String[] args) {
-        new MajorityElement();
+        System.out.println(Integer.bitCount(2));
     }
 }
