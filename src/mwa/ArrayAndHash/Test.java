@@ -7,23 +7,29 @@ import java.util.TreeSet;
 public class Test {
     Test(){
         double as = System.nanoTime();
-        System.out.println(countUniqueSubstrings("bcada"));
+        System.out.println(countUniqueSubstringSudin("bcada"));
         System.out.println(System.nanoTime() - as);
         //b , c ,  a , d , a , bc, bca, bcad, ca, cad, ad, da
-        //b, c, bc, a, bca,
+
+        //b, c, a, d, a, bc, ca, ad, da, bca, cad, bcad
+
     }
     public static int countUniqueSubstringSudin(String s) {
-        int count = 0;
-        for(int i =0; i<s.length(); i++){
-            TreeSet<Character> set = new TreeSet<>();
-            for(int j = 0; j<i; j++){
-                if(checkUnique(s, i, j)){
-                    count++;
-                };
+        // window size
+       //loop through the string
+        // start, end
+        int count =0;
+        for(int windowSize = 0; windowSize < s.length(); windowSize++){
+            int leftIndex = 0;
+            for(int rightIndex =windowSize; rightIndex< s.length(); rightIndex++){
+                if(checkUnique(s, leftIndex, rightIndex)){
+                     count++;
+                }
+                leftIndex++;
             }
         }
         System.out.println(count);
-        return 1;
+        return count;
     }
 
     private static boolean checkUnique(String s, int i, int j) {
@@ -38,6 +44,8 @@ public class Test {
     }
 
     public static int countUniqueSubstrings(String s) {
+        //bcadaa
+        //b , c ,  a , d , a , bc, bca, bcad, ca, cad, ad, da
         int count = 0;
 
         for (int i = 0; i < s.length(); i++) {
@@ -45,10 +53,11 @@ public class Test {
 
             for (int j = i; j < s.length(); j++) {
                 char ch = s.charAt(j);
-
                 if (hash[ch] > 0)
                     break;
 
+                System.out.println(ch);
+                //b c a d c a d a d d a a
                 hash[ch]++;
                 count++;
             }

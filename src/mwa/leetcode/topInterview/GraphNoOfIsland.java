@@ -1,6 +1,8 @@
 package mwa.leetcode.topInterview;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class GraphNoOfIsland {
@@ -11,6 +13,7 @@ public class GraphNoOfIsland {
             {'0', '0', '0', '0', '0'}
     };
     GraphNoOfIsland(){
+        List<Integer>[] list = new ArrayList[2];
         numIslands();
     }
 
